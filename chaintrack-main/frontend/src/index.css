@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-walmart-gray-900 font-walmart;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-walmart-gray-900;
+    line-height: 1.2;
+  }
+  
+  p {
+    @apply text-walmart-gray-800;
+  }
+}
+
+@layer components {
+  .walmart-card {
+    @apply bg-white rounded-xl shadow-walmart border border-walmart-blue-100 transition-all duration-300 hover:shadow-walmart-lg;
+  }
+  
+  .walmart-btn-primary {
+    @apply bg-walmart-blue-600 hover:bg-walmart-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-walmart;
+  }
+  
+  .walmart-btn-secondary {
+    @apply bg-walmart-yellow-500 hover:bg-walmart-yellow-600 text-walmart-gray-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-walmart;
+  }
+  
+  .walmart-btn-accent {
+    @apply bg-walmart-orange-500 hover:bg-walmart-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-walmart;
+  }
+  
+  .walmart-input {
+    @apply w-full px-4 py-3 border border-walmart-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-walmart-blue-500 focus:border-transparent transition-all duration-300 text-walmart-gray-900;
+  }
+  
+  .walmart-gradient {
+    background: linear-gradient(135deg, #0071CE 0%, #004C91 100%);
+  }
+  
+  .walmart-gradient-yellow {
+    background: linear-gradient(135deg, #FFDE00 0%, #FFC220 100%);
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-walmart {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .status-badge-created {
+    @apply bg-walmart-blue-100 text-walmart-blue-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .status-badge-transit {
+    @apply bg-walmart-yellow-100 text-walmart-yellow-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .status-badge-delivered {
+    @apply bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .floating-element {
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-element:nth-child(2) {
+    animation-delay: -2s;
+  }
+  
+  .floating-element:nth-child(3) {
+    animation-delay: -4s;
+  }
+  
+  .loading-skeleton {
+    @apply bg-walmart-gray-200 animate-pulse rounded;
+  }
+  
+  .walmart-hero-bg {
+    background: linear-gradient(135deg, #0071CE 0%, #004C91 50%, #001F3D 100%);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .kafka-terminal {
+    font-family: 'Courier New', monospace;
+    background: #1a1a1a;
+    color: #00ff00;
+  }
+  
+  .kafka-event-flow {
+    background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%);
+    animation: flow 2s ease-in-out infinite;
+  }
+  
+  @keyframes flow {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+  }
+}
+
+@layer utilities {
+  .text-gradient-walmart {
+    background: linear-gradient(135deg, #0071CE 0%, #004C91 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-yellow {
+    background: linear-gradient(135deg, #FFDE00 0%, #FFC220 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .grid-cols-25 {
+    grid-template-columns: repeat(25, minmax(0, 1fr));
+  }
+}
